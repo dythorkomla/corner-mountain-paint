@@ -111,26 +111,25 @@ fill it in when you have it:
 
 ## Deploy to GitHub Pages
 
-Served from the **root** of the repository on the `main` branch.
+Served from the **root** of the repository on the `main` branch. The local repo is
+already initialised, committed on `main`, and pointed at
+`https://github.com/dythorkomla/corner-mountain-paint.git`.
 
 ### First time
 
-```bash
-cd corner-mountain-paint
-git init
-git branch -M main
-git add .
-git commit -m "Initial site"
+1. Create the repo: <https://github.com/new> → owner `dythorkomla`, name
+   `corner-mountain-paint`, **Public**, do **not** add a README / .gitignore /
+   licence → **Create repository**.
+2. From `corner-mountain-paint/`:
+   ```bash
+   git push -u origin main
+   ```
+   (Git Credential Manager will prompt to sign in as `dythorkomla` the first time.)
+3. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a
+   branch → Branch: `main` / `/ (root)` → Save.**
 
-# create the repo and push (replace the owner/name)
-gh repo create <your-github-username>/corner-mountain-paint --public --source=. --push
-# or create it in the GitHub web UI, then:
-#   git remote add origin https://github.com/<your-github-username>/corner-mountain-paint.git
-#   git push -u origin main
-```
-
-Then, on GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a
-branch → Branch: `main` / `/ (root)` → Save.**
+Live within a minute or two at
+`https://dythorkomla.github.io/corner-mountain-paint/`.
 
 ### Updates
 
@@ -144,22 +143,26 @@ git push
 
 ## Custom domain (cornermountainpaint.com)
 
-A `CNAME` file is already included with `www.cornermountainpaint.com`, and the SEO
-tags (`canonical`, `og:*`), `sitemap.xml`, and `robots.txt` all use that host.
+The site launched on the `github.io` URL, so there is **no `CNAME` file** yet, but
+the SEO tags (`canonical`, `og:*`), `sitemap.xml`, and `robots.txt` still point at
+`https://www.cornermountainpaint.com`. Two ways to reconcile that:
+
+- **Point the domain at the site** — create a file named `CNAME` in the repo root
+  containing one line, `www.cornermountainpaint.com`, then set up DNS (below).
+- **Stay on github.io for now** — search-and-replace
+  `https://www.cornermountainpaint.com` with
+  `https://dythorkomla.github.io/corner-mountain-paint` across the `.html` files,
+  `robots.txt`, and `sitemap.xml`. Internal links are relative and need no change.
+
+### DNS (when moving to the custom domain)
 
 1. At your DNS registrar:
-   - `CNAME` record: `www` → `<your-github-username>.github.io`
+   - `CNAME` record: `www` → `dythorkomla.github.io`
    - Four `A` records for the apex `@` → `185.199.108.153`, `185.199.109.153`,
      `185.199.110.153`, `185.199.111.153`
 2. GitHub → **Settings → Pages** → set the custom domain to
    `www.cornermountainpaint.com`, then tick **Enforce HTTPS** once the certificate
-   is issued.
-
-**If you launch on the `github.io` URL first**, search-and-replace
-`https://www.cornermountainpaint.com` with your
-`https://<your-github-username>.github.io/corner-mountain-paint` across the
-`.html` files, `robots.txt`, and `sitemap.xml`, and delete the `CNAME` file.
-Internal links are all relative and need no change.
+   is issued. (Setting the custom domain here writes the `CNAME` file for you.)
 
 ---
 
