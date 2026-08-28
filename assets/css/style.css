@@ -221,6 +221,17 @@ hr { border: 0; border-top: 1px solid var(--paper-deep); margin: 2.5rem 0; }
 .hero--page h1 { margin-bottom: .15em; }
 .hero--page .hero__tagline { margin-bottom: 0; }
 
+/* photo-forward hero: let the picture read, keep only a light tint + a
+   bottom band behind the heading */
+.hero--photo { min-height: min(62vh, 540px); align-items: flex-end; }
+.hero--photo::after {
+  background:
+    linear-gradient(180deg, rgba(15,35,56,.22) 0%, rgba(15,35,56,.12) 40%, rgba(15,35,56,.78) 100%);
+}
+.hero--photo h1, .hero--photo p {
+  text-shadow: 0 2px 22px rgba(15,35,56,.8), 0 1px 4px rgba(15,35,56,.65);
+}
+
 /* dealer badge */
 .dealer-badge {
   display: inline-block; font-family: var(--mono); font-size: .7rem; font-weight: 600;
