@@ -1,0 +1,15 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.vscode/
+
+# Local scratch, previews, and screenshots (never part of the site)
+_*.html
+_*.png
+/preview/
+
+# Raw phone-photo dump. The curated, web-sized images the site uses live in
+# assets/img/. Delete this line if you want the originals tracked too.
+/images/

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Corner Mountain Paint, Pincher Creek</title>
+<meta name="description" content="Contact Corner Mountain Paint in Pincher Creek about Benjamin Moore paint, colour matching, or colour consultation. Call 403 627 5700 or email sales@cornermountainpaint.com.">
+<link rel="canonical" href="https://www.cornermountainpaint.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Corner Mountain Paint">
+<meta property="og:description" content="Questions about paint, colour, or a project? Call 403 627 5700 or send a message.">
+<meta property="og:url" content="https://www.cornermountainpaint.com/contact.html">
+<meta property="og:image" content="https://www.cornermountainpaint.com/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.svg" alt="">
+      <span>Corner Mountain<small>Paint</small></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="paints.html">Paints</a></li>
+        <li><a href="colour-consultation.html">Colour</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero--page">
+    <img class="hero__bg" src="assets/img/store-interior-wide.jpg"
+         alt="Inside Corner Mountain Paint, looking toward the front counter.">
+    <div class="wrap">
+      <h1>Contact</h1>
+      <p class="hero__tagline">Paint, colour, and project questions</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div>
+          <h2>Reach us</h2>
+          <p>The fastest way is a phone call. For colour questions, an email with a few photos of the
+            room works well &mdash; we&rsquo;ll reply with somewhere to start.</p>
+
+          <dl>
+            <div class="contact-detail">
+              <dt>Phone</dt>
+              <dd><a href="tel:+14036275700">403&nbsp;627&nbsp;5700</a></dd>
+            </div>
+            <div class="contact-detail">
+              <dt>Email</dt>
+              <dd><a href="mailto:sales@cornermountainpaint.com">sales@cornermountainpaint.com</a></dd>
+            </div>
+            <div class="contact-detail">
+              <dt>Sales</dt>
+              <dd>Samuel Reimer</dd>
+            </div>
+            <div class="contact-detail">
+              <dt>Address</dt>
+              <dd>1072C Main St, Pincher Creek, Alberta</dd>
+            </div>
+            <div class="contact-detail">
+              <dt>Hours</dt>
+              <dd>Store hours to be confirmed &mdash; please call ahead.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div>
+          <h2>Send a message</h2>
+          <!--
+            This form submits in the background to Web3Forms, which emails the
+            message to sales@cornermountainpaint.com. No third-party dashboard.
+
+            SET-UP (one time, ~2 min):
+              1. Go to https://web3forms.com
+              2. Enter sales@cornermountainpaint.com, submit, and check that inbox
+              3. Copy the Access Key from the email
+              4. Paste it as the value of the hidden "access_key" field below,
+                 replacing PASTE-WEB3FORMS-ACCESS-KEY-HERE
+            Until the key is set, the form shows a fallback asking the visitor to
+            email directly.
+
+            To use Formspree instead: set the form's action to your
+            https://formspree.io/f/XXXX endpoint and delete the access_key field;
+            the JavaScript handles both.
+          -->
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="PASTE-WEB3FORMS-ACCESS-KEY-HERE">
+            <input type="hidden" name="subject" value="New enquiry from the Corner Mountain Paint website">
+            <input type="hidden" name="from_name" value="Corner Mountain Paint website">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required
+                placeholder="Your project, the colour or finish you're after, and roughly when."></textarea>
+            </div>
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+                   class="visually-hidden" aria-hidden="true">
+            <p class="visually-hidden" aria-hidden="true">
+              <label>Leave this field empty
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </p>
+            <button class="btn" type="submit">Send message</button>
+            <p id="form-status" class="note" role="status" aria-live="polite" hidden
+               style="margin-top:1.1rem"></p>
+          </form>
+          <p style="margin-top:1rem;font-size:.9rem;color:var(--ink-soft)">
+            Prefer to write to us directly?
+            <a href="mailto:sales@cornermountainpaint.com">sales@cornermountainpaint.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--navy statement">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow">Corner Mountain Paint</p>
+      <blockquote>Bring the project. We&rsquo;ll bring the paint.</blockquote>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <div>
+      <div class="footer-brand">
+        <img src="assets/img/logo.svg" alt="">
+        <span>Corner Mountain Paint</span>
+      </div>
+      <p class="footer-tagline">Authorized Benjamin Moore Retailer</p>
+      <p>1072C Main St, Pincher Creek, Alberta<br>
+        <a href="tel:+14036275700">403&nbsp;627&nbsp;5700</a> &middot;
+        <a href="mailto:sales@cornermountainpaint.com">sales@cornermountainpaint.com</a></p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="paints.html">Paints &amp; Stains</a></li>
+        <li><a href="colour-consultation.html">Colour Consultation</a></li>
+        <li><a href="services.html">In-Store Services</a></li>
+        <li><a href="about.html">About the Store</a></li>
+        <li><a href="visit.html">Hours &amp; Location</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Corner Mountain Paint</h4>
+      <ul>
+        <li>Main Street, Pincher Creek, Alberta</li>
+        <li><a href="visit.html">Get directions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap site-footer__legal">
+    <span>&copy; <span id="year">2026</span> Corner Mountain Paint</span>
+    <span>Benjamin Moore&reg; and the triangle &ldquo;M&rdquo; symbol are registered trademarks of Benjamin Moore &amp; Co.</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

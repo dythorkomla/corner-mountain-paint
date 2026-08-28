@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Corner Mountain Paint</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#16324f; --navy-deep:#0f2338; --paper:#f7f4ee; --amber:#c98a2c; --ink-soft:#565a63; }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: "Work Sans", system-ui, sans-serif; background: var(--paper); color: #23262b;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 2rem; line-height: 1.7;
+  }
+  .box { max-width: 34rem; }
+  svg { width: 84px; height: 84px; margin: 0 auto 1.5rem; display: block; }
+  h1 { font-family: "Space Grotesk", Georgia, serif; font-weight: 600; color: var(--navy);
+       font-size: clamp(1.9rem, 6vw, 2.7rem); margin-bottom: .5rem; letter-spacing: -.01em; }
+  p { color: var(--ink-soft); margin-bottom: 1.6rem; }
+  .row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  a.btn, a.ghost {
+    display: inline-block; font-weight: 600; font-size: .8rem; letter-spacing: .1em;
+    text-transform: uppercase; padding: .85rem 1.6rem; border-radius: 3px;
+    text-decoration: none; border: 1.5px solid var(--amber);
+  }
+  a.btn { background: var(--amber); color: var(--navy-deep); }
+  a.ghost { color: var(--navy); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <rect width="100" height="100" rx="20" fill="#16324f"/>
+      <rect x="16" y="72" width="68" height="4" rx="2" fill="#c98a2c"/>
+      <path d="M20 74 L40 34 L58.5 74 Z" fill="#c98a2c" fill-opacity="0.9"/>
+      <path d="M40 74 L61.5 24 L84 74 Z" fill="#c98a2c"/>
+      <path d="M61.5 24 L56.5 37 L60 34.5 L63.5 40.5 L67 32.5 Z" fill="#16324f"/>
+    </svg>
+    <h1>This one didn&rsquo;t match</h1>
+    <p>The page you were after isn&rsquo;t here. Let&rsquo;s get you back to something that is.</p>
+    <div class="row">
+      <a class="btn" id="home" href="/">Back to home</a>
+      <a class="ghost" id="contact" href="/contact.html">Contact us</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var m = location.pathname.match(/^(.*\/)[^\/]*$/);
+      var base = (m ? m[1] : "/").replace(/\/$/, "");
+      document.getElementById("home").href = base + "/index.html";
+      document.getElementById("contact").href = base + "/contact.html";
+    })();
+  </script>
+</body>
+</html>
