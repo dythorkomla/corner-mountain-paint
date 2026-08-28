@@ -57,17 +57,13 @@ real thing (and the Google Map embed behaves better).
 
 ## Things to finish before launch
 
-Only what appears on the business card and storefront is stated as fact:
-**Corner Mountain Paint**, authorized Benjamin Moore retailer · contact **Samuel
-Reimer** · **1072C Main St, Pincher Creek, Alberta** · **403 627 5700** ·
-**sales@cornermountainpaint.com**. Everything else is left blank on purpose —
-fill it in when you have it:
+Stated as fact on the site: **Corner Mountain Paint**, authorized Benjamin Moore
+retailer · contact **Samuel Reimer** · **1072C Main St, Pincher Creek, Alberta** ·
+**403 627 5700** · **sales@cornermountainpaint.com** · **hours Mon–Fri
+9 a.m.–5 p.m., closed weekends** (`visit.html`, `contact.html`, and every page
+footer). Still left blank on purpose — fill in when you have it:
 
 1. **Add the missing details.**
-   - **Store hours** — `visit.html` shows a "hours will be posted soon" placeholder,
-     and `contact.html` says "to be confirmed." Add the real hours in both places.
-     (There is a `.hours-table` style already in `assets/css/style.css` ready for a
-     day/time table.)
    - **Postal code** — not on the card; add it to the address on `visit.html`,
      `contact.html`, and the footer of every page when known.
    - **Service area / partner businesses** — none are named. Add them later if you
