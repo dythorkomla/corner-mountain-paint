@@ -137,28 +137,36 @@ git push
 
 ---
 
-## Custom domain (cornermountainpaint.com)
+## Custom domain (www.cornermountainpaint.com)
 
-The site launched on the `github.io` URL, so there is **no `CNAME` file** yet, but
-the SEO tags (`canonical`, `og:*`), `sitemap.xml`, and `robots.txt` still point at
-`https://www.cornermountainpaint.com`. Two ways to reconcile that:
+The `CNAME` file holds `www.cornermountainpaint.com`, and GitHub Pages is
+configured for that host. The SEO tags (`canonical`, `og:*`), `sitemap.xml`, and
+`robots.txt` all already use it. What remains is DNS.
 
-- **Point the domain at the site** — create a file named `CNAME` in the repo root
-  containing one line, `www.cornermountainpaint.com`, then set up DNS (below).
-- **Stay on github.io for now** — search-and-replace
-  `https://www.cornermountainpaint.com` with
-  `https://dythorkomla.github.io/corner-mountain-paint` across the `.html` files,
-  `robots.txt`, and `sitemap.xml`. Internal links are relative and need no change.
+### DNS records to add for `cornermountainpaint.com`
 
-### DNS (when moving to the custom domain)
+Domain is registered through Squarespace (ex–Google Domains); manage records at
+**Squarespace → Domains → cornermountainpaint.com → DNS Settings**. Delete any
+existing parking/forwarding records for `@` and `www` first, then add:
 
-1. At your DNS registrar:
-   - `CNAME` record: `www` → `dythorkomla.github.io`
-   - Four `A` records for the apex `@` → `185.199.108.153`, `185.199.109.153`,
-     `185.199.110.153`, `185.199.111.153`
-2. GitHub → **Settings → Pages** → set the custom domain to
-   `www.cornermountainpaint.com`, then tick **Enforce HTTPS** once the certificate
-   is issued. (Setting the custom domain here writes the `CNAME` file for you.)
+| Type  | Host  | Value                |
+|-------|-------|----------------------|
+| A     | `@`   | `185.199.108.153`    |
+| A     | `@`   | `185.199.109.153`    |
+| A     | `@`   | `185.199.110.153`    |
+| A     | `@`   | `185.199.111.153`    |
+| CNAME | `www` | `dythorkomla.github.io` |
+
+Optional IPv6 — AAAA on `@`: `2606:50c0:8000::153`, `2606:50c0:8001::153`,
+`2606:50c0:8002::153`, `2606:50c0:8003::153`.
+
+Propagation is usually 10–60 min. GitHub then auto-issues the TLS certificate
+(another 15 min – 1 h). Once it's issued, turn on **Settings → Pages → Enforce
+HTTPS** (or `gh api -X PUT repos/dythorkomla/corner-mountain-paint/pages -F https_enforced=true`).
+
+Optional hardening: **Settings → Pages → Add a domain** gives a
+`_github-pages-challenge-dythorkomla` TXT record; adding it verifies the domain to
+the account and blocks anyone else from claiming it on Pages.
 
 ---
 
